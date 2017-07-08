@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style type="text/css">
+        html, body { height: 100%; margin: 0; padding: 0; }
+        #map { height: 100%; }
+        #screen{
+            border: 5px solid transparent;
+            position: absolute;
+            right: 25px;
+            top: 25px;
+            height: 176px;
+            width: 264px;
+            background-color: white;
+            border: 1px solid black;
+        }
+		#download-box{
+			position: absolute;
+            right: 25px;
+            top: 225px;
+		}
+		#download-box button{
+			width: 264px;
+			font-size: 20px;
+		}
+        #nextDirection{
+            height: 45%;
+            padding: 5px;
+            text-align: center;
+        }
+        #currentDirection{
+            padding: 5px;
+            text-align: center;
+            height: 45%;
+            border-bottom: 1px solid gray;
+        }
+        #minimap{
+            width: 100%;
+            height: 100%;
+            border: 1px solid #808080;
+            border-top: 1px solid blue;;
+        }
+        @keyframes blink {
+            from {border: 5px solid transparent;}
+            to {border: 5px solid #ff9736;}
+        }
+        .blinking{
+            animation-name: blink;
+            animation-duration: 1s;
+            animation-iteration-count:infinite;
+        }
+        #description{
+            padding-left: 5px;
+            width: 100%;
+            height: 10%;
+            text-align: center;
+            overflow: hidden;
+        }
+    </style>
+    <title>Title</title>
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/main.js"></script>
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD12QvTq5Cdo4kqzttY2Kc2nw-wiXuUxxc&callback=initMap">
+    </script>
+</head>
+<body>
+    <div id="map"></div>
+    <div id="screen">
+            <div id="description">
+                d
+            </div>
+            <div style="float: left; display: inline-block; width: 30%; height: 90%;">
+                <div id="currentDirection">
+                    b
+                </div>
+                <div id="nextDirection">
+                    a
+                </div>
+            </div>
+            <div style="float: right; display: inline-block; height: 90%; width: 70%;">
+                <canvas id="minimap" style="background-color:#f0f0f0">
+
+                </canvas>
+            </div>
+    </div>
+	<div id="download-box">
+		<a href="" id="link" onclick="downloadData(this)" download="asdf.txt"><button>Convert</button></a>
+	</div>
+</body>
+</html>
