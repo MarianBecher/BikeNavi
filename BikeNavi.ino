@@ -387,10 +387,6 @@ void renderHorizontallLine(unsigned short y, unsigned short startX, unsigned sho
   if (currentLineIndex == y) {
     unsigned short startByte = startX / 8;
     unsigned short endByte = endX / 8;
-    Serial.print("StartByte: ");
-    Serial.println(startByte);
-    Serial.print("EndByte: ");
-    Serial.println(endByte);
     for (unsigned short index = startByte; index < endByte; index++) {
       line->insertByte(0xFF, index*8); 
     }
